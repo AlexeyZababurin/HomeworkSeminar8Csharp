@@ -13,19 +13,19 @@ void SortMassiveRowsDescend(int[,] massive)
 {
     for (int row = 0; row < massive.GetLength(0); row++)
     {
-        for (int col = 0; col < massive.GetLength(1) - 1; col++)
+        for (int column = 0; column < massive.GetLength(1) - 1; column++)
         {
-            int colMax = col;
-            for (int j = col + 1; j < massive.GetLength(1); j++)
+            int columnMax = column;
+            for (int j = column + 1; j < massive.GetLength(1); j++)
             {
-                if (massive[row, j] > massive[row, colMax])
+                if (massive[row, j] > massive[row, columnMax])
                 {
-                    colMax = j;
+                    columnMax = j;
                 }
             }
-            int temp = massive[row, col];
-            massive[row, col] = massive[row, colMax];
-            massive[row, colMax] = temp;
+            int temp = massive[row, column];
+            massive[row, column] = massive[row, columnMax];
+            massive[row, columnMax] = temp;
         }
     }
 }
